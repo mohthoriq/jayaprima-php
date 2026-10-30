@@ -1,0 +1,41 @@
+#RewriteRule .* - [E=WEBDIR:retail\/]
+
+RewriteEngine On
+ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
+ErrorDocument 403 /404.html
+ErrorDocument 400 /404.html
+ErrorDocument 401 /401.html
+
+#Block Index Page
+Options -Indexes
+
+# RedirectMatch akan throw 404 jika Regex TRUE; value REGEX berdasarkan REQUEST_URI (Request Tanpa ada HTTP_HOST)
+# logika: jika path
+#   setelah DOMAIN diakhiri *.php dan parameter GET jika ada
+#   setelah DOMAIN diakhiri asset/*
+RedirectMatch 404 "^(?!(^\/(?:([^\/]*.php(\?.*)?)|(asset\/.*))?$)).*$"
+
+RewriteRule ^$ http://localhost/jaya_prima_2/index.php [R=301,L]
+
+#ErrorDocument 404 "Host: %{HTTP_HOST} | RequestURI: %{REQUEST_URI} | Domain: %{ENV:DOMAIN}"
+#RewriteRule ^ - [L,R=404]
+
+#php_value max_execution_time 3600 #Second
+#php_value max_input_time -1 #unlimited
+#php_value max_input_nesting_level 2147483647
+#php_value max_input_vars 2147483647
+#php_value memory_limit -1 #no limit
+#php_value upload_max_filesize 1G
+#php_value post_max_size 0 #no limit
+##php_value extension pdo_sqlite
+##php_value extension sockets
+##php_value extension sqlite3
+#php_value session.gc_maxlifetime 86400 #Second
+#php_value session.cookie_lifetime 0 #until browser restart
+#php_value session.cache_expire 1440 #Minute
+
+
+
+
+
