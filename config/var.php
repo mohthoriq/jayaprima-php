@@ -3,8 +3,8 @@ date_default_timezone_set('Asia/Jakarta');
 session_start();
 
 
-const HOST = 'http://localhost/jayaprima/';
-const ROOTDIR = 'E:/My Project - 2025/jaya-prima/jayaprima-web-server/';
+const HOST = 'https://jpos.ilprodcution.com/';
+const ROOTDIR = __DIR__ . '/../';
 const TOKEN = 'ECWRaiq4wobZ4FfWkvUcinF4PYo6aNLfCxYvjJ714bOxBZoEozfjpmHMGlDjDsoYzO4k5HRsBLKrzqGXujXHy8scWvCXnVLCPegH';
 
 
